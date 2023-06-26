@@ -18,10 +18,16 @@ def next_prime_age_year(birth_year):
         if is_prime(age):
             return birth_year + age
 
-# Get the user's birth year
-birth_year = int(input("Enter your birth year: "))
+# Keep asking for the user's birth year until they choose to exit
+while True:
+    user_input = input("Enter your birth year (or 'exit' to quit): ")
+    if user_input.lower() == 'exit':
+        print("Thank you. Exiting the program.")
+        break
 
-# Calculate and display the next prime age year
-next_year = next_prime_age_year(birth_year)
-print("The next year when your age will be a prime number is:", next_year)
-input("prompt: ")
+    try:
+        birth_year = int(user_input)
+        next_year = next_prime_age_year(birth_year)
+        print("The next year when your age will be a prime number is:", next_year)
+    except ValueError:
+        print("Invalid input. Please enter a valid birth year or 'exit' to quit.")
