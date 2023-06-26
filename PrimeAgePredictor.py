@@ -18,7 +18,6 @@ def next_prime_age_year(birth_year):
         if is_prime(age):
             return birth_year + age
 
-# Keep asking for the user's birth year until they choose to exit
 while True:
     user_input = input("Enter your birth year (or 'exit' to quit): ")
     if user_input.lower() == 'exit':
